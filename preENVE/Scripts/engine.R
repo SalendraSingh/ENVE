@@ -302,7 +302,7 @@ samp_info_proc <- function(z)
 NorNor_dataRatio_calc <-function()
 {
   
-  smp_info <-as.data.frame(read.delim(file = paste(anaInp, "nor_samp_info.txt", sep="/"),header=T,sep ='\t' ),row.names=NULL,optional = F, stringsAsFactors = F)
+  smp_info <-as.data.frame(read.delim(file = paste(anaInp, "Norm_Samp_List.txt", sep="/"),header=T,sep ='\t' ),row.names=NULL,optional = F, stringsAsFactors = F)
   i <- sapply(smp_info, is.factor)
   smp_info[i] <- lapply(smp_info[i], as.character)
   colnames(smp_info) <- c("Sample","Sample_BAM","PF_UQ_BASES_ALIGNED","Gender")
