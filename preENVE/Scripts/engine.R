@@ -232,7 +232,7 @@ samp_info_proc <- function(z)
             i <- sapply(nor_list_m, is.factor)
             nor_list_m[i] <- lapply(nor_list_m[i], as.character)
             nor_list <- rbind(nor_list_m,nor_list_f)
-            write.table(nor_list, file=paste(anaInp, "Norm_Samp_List.txt", sep="/"), row.names=F, col.names=F, quote=F, sep="\t")
+            write.table(nor_list, file=paste(anaInp, "nor_samp_info.txt", sep="/"), row.names=F, col.names=F, quote=F, sep="\t")
            
           }else
           {
@@ -302,7 +302,7 @@ samp_info_proc <- function(z)
 NorNor_dataRatio_calc <-function()
 {
   
-  smp_info <-as.data.frame(read.delim(file = paste(anaInp, "Norm_Samp_List.txt", sep="/"),header=T,sep ='\t' ),row.names=NULL,optional = F, stringsAsFactors = F)
+  smp_info <-as.data.frame(read.delim(file = paste(anaInp, "nor_samp_info.txt", sep="/"),header=T,sep ='\t' ),row.names=NULL,optional = F, stringsAsFactors = F)
   i <- sapply(smp_info, is.factor)
   smp_info[i] <- lapply(smp_info[i], as.character)
   colnames(smp_info) <- c("Sample","Sample_BAM","PF_UQ_BASES_ALIGNED","Gender")
