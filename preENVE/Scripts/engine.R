@@ -12,6 +12,10 @@ dwnPack <- function(x)
     }
   }
 }
+
+
+##########################################################################################################################################################################################
+View <- if (identical(utils::View, View)) print else View
 ##########################################################################################################################################################################################
 dir_create <- function()
 {
@@ -112,7 +116,7 @@ samp_info_proc <- function(z)
 {
   half_number = floor(Number_of_samp/2)
   ##Import the Sample sheet and convert all factors to characters##
-  smp_info <-as.data.frame(read.delim(file = z,header=T,sep ='\t' ),row.names=NULL,optional = F, stringsAsFactors = F)
+  smp_info <-as.data.frame(read.table(file = z,header=T,sep ='\t',stringsAsFactors = F),row.names=NULL, stringsAsFactors = F) ######Make an edit to read F as F and not False
   i <- sapply(smp_info, is.factor)
   smp_info[i] <- lapply(smp_info[i], as.character)
   ###########
@@ -185,7 +189,7 @@ samp_info_proc <- function(z)
          NorSamps_Avl <- as.data.frame(read.delim(file = paste(anaInp,'NormBam.txt',sep='/'),header=F,sep ='\t' ),row.names=NULL,optional = F, stringsAsFactors = F, na.strings = 'NA')
          i <- sapply(NorSamps_Avl, is.factor)
          NorSamps_Avl[i] <- lapply(NorSamps_Avl[i], as.character)
-         diff1  <- data.frame(setdiff(NorSampInfo2[,1],NorSamps_Avl[,1]))         ### Chk for the Norm files required and available
+         diff1  <- data.frame(setdiff(NorSampInfo2[,2],NorSamps_Avl[,1]))         ### Chk for the Norm files required and available
           i <- sapply(diff1, is.factor)
          diff1[i] <- lapply(diff1[i], as.character)
         if(length(diff1[,1])!=0)
@@ -232,7 +236,7 @@ samp_info_proc <- function(z)
             i <- sapply(nor_list_m, is.factor)
             nor_list_m[i] <- lapply(nor_list_m[i], as.character)
             nor_list <- rbind(nor_list_m,nor_list_f)
-            write.table(nor_list, file=paste(anaInp, "nor_samp_info.txt", sep="/"), row.names=F, col.names=F, quote=F, sep="\t")
+            write.table(nor_list, file=paste(anaInp, "Norm_Samp_List.txt", sep="/"), row.names=F, col.names=F, quote=F, sep="\t")
            
           }else
           {
@@ -270,7 +274,7 @@ samp_info_proc <- function(z)
           TumSamps_Avl <- as.data.frame(read.delim(file = paste(anaInp,'TumBam.txt',sep='/'),header=F,sep ='\t' ),row.names=NULL,optional = F, stringsAsFactors = F, na.strings = 'NA')
           i <- sapply(TumSamps_Avl, is.factor)
           TumSamps_Avl[i] <- lapply(TumSamps_Avl[i], as.character)
-          diff2  <- data.frame(setdiff(TumSampInfo2[,4],TumSamps_Avl[,1]))
+          diff2  <- data.frame(setdiff(TumSampInfo2[,5],TumSamps_Avl[,1]))
           i <- sapply(diff2, is.factor)
           diff2[i] <- lapply(diff2[i], as.character)
           if(length(diff2[,1])!=0)
@@ -1105,8 +1109,3 @@ if(Com_Scr)
 
 
 ##########################################################################################################################################################################################
-
-
-
-
-
