@@ -184,5 +184,4 @@ If user does not need the preENVE module to create GC corrected log ratio, user 
 
 ==============================================================================================================================
 ### Bugs Fixed 
-
 Version 1.0.1 (May 2016) : Fixed bug in PreENVE module's parsing of sample_info file.
