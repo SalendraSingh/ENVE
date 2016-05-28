@@ -49,9 +49,6 @@ run_chk <- function()
 run <- run_chk()
 
 ##################################################################################################
-
-
-
 if(run)
 {
 source(paste(preENVE,"Scripts","engine.R",sep='/'))
