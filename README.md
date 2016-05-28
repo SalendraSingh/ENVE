@@ -38,7 +38,7 @@ In this guide we provide easy to follow instructions for installing the ENVE mod
 
 ###Introduction 
 
-This page describes the various system and software required to run the ENVE V1.0.0
+This page describes the various system and software required to run the ENVE V1.0.1
 
 ###Platforms and System Requirements
 
