@@ -185,4 +185,4 @@ If user does not need the preENVE module to create GC corrected log ratio, user 
 ==============================================================================================================================
 ### Bugs Fixed 
 
-Version 1.0.1 : There was some bug in the PreENVE Module where it tries to read sample ID and Sample names from the sample_info file. the field information got inter changed and was creating problems in checking for files in the provided directories.  
+Version 1.0.1 (May 2016) : There was some bug in the PreENVE Module where it tries to read sample ID and Sample names from the sample_info file. the field information got inter changed and was creating problems in checking for files in the provided directories.  
