@@ -1,4 +1,4 @@
-##ENVE Version 1.0.0
+##ENVE Version 1.0.1
 
 ##### For Academic/Non-Profit use
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>
@@ -183,3 +183,5 @@ If user does not need the preENVE module to create GC corrected log ratio, user 
       * This file contains the final ENVE p values of all the segments after removing the noise by the use of Normal Diploid comparisons.
 
 ==============================================================================================================================
+Bugs Fixed 
+Version 1.0.1 : There was some bug in the PreENVE Module where it tries to read sample ID and Sample names from the sample_info file. the field information got inter changed and was creating problems in checking for files in the provided directories.  
