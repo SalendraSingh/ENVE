@@ -183,3 +183,6 @@ If user does not need the preENVE module to create GC corrected log ratio, user 
       * This file contains the final ENVE p values of all the segments after removing the noise by the use of Normal Diploid comparisons.
 
 ==============================================================================================================================
+### Bugs Fixed 
+
+Version 1.0.1 (May 2016) : There was some bug in the PreENVE Module where it tries to read sample ID and Sample names from the sample_info file. the field information got inter changed and was creating problems in checking for files in the provided directories. 
